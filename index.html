@@ -3,24 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./dist/output.css">
+    <link rel="stylesheet" href="./build.css">
     <link rel="icon" href="./images/hef.jpg" type="image/x-icon">
     <title>HEF Analyzer</title>
 </head>
 <body>
-    <div id="root">
+    <div id="root" class="relative min-h-screen bg-cyan-700 text-black">
         <header></header>
         <main>
-            <div id="landing">
+            <div id="landing" class="w-full h-screen">
                 <h1 class="text-center text-xl font-bold bg-lime-200 p-4 mb-4">Calculate your HEF funding</h1>
-                <label for="fees">Enter your fees amount</label>
-                <input type="text" name="fees" id="fees" class="border border-solid border-slate-400">
-                <label for="scholarship">Enter you scholarship amount</label>
-                <input type="text" name="scholarship" id="scholarship" class="border border-solid border-slate-400">
-                <button type="button" class="bg-red-300 p-3 rounded-md font-bold text-lg">Calculate</button>
+                <div class="flex justify-center items-center gap-4 flex-wrap">
+                    <div>
+                        <label for="fees" class="block">Enter your fees amount</label>
+                        <input type="text" name="fees" id="fees" class="border border-solid border-slate-400">
+                    </div>
+                    <div>
+                        <label for="scholarship" class="block">Enter you scholarship amount</label>
+                        <input type="text" name="scholarship" id="scholarship" class="border border-solid border-slate-400">
+                    </div>
+                    <button type="button" id="calculate" class="bg-red-300 p-3 rounded-md font-bold focus:ring focus:ring-cyan-800 text-lg">Calculate</button>
+                </div>
+                <div id="error" class="m-4 text-lg font-bold text-center"></div>
+                <div id="result" class="m-4"></div>
+                <table class="m-10 w-1/2 mx-auto border-4 border-solid border-cyan-900 border-collapse">
+                    <thead class="bg-red-600">
+                        <tr>
+                            <th>FUND</th>
+                            <th>AMOUNT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <P>FEES</P>
+                        </td>
+                        <td>
+                            <P id="feesAmount"></P>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <P>SCHOLARSHIP</P>
+                        </td>
+                        <td>
+                            <P id="scholarshipAmount"></P>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <P>FEES LOAN</P>
+                        </td>
+                        <td>
+                            <P id="loanAmount"></P>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <P>HELB UPKEEP LOAN</P>
+                        </td>
+                        <td>
+                            <P id="helbAmount"></P>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <P>PARENT</P>
+                        </td>
+                        <td>
+                            <P id="parentAmount"></P>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </main>
-        <footer></footer>
+        <footer class="absolute bottom-0 bg-lime-200 w-full p-4 flex items-center justify-center"><p class="text-md font-light">Copyrights &copy; 2023 Emmanuel Kimaru</p></footer>
     </div>
+    <script src="./script.js"></script>
 </body>
 </html>
